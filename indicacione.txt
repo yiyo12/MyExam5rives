@@ -1,0 +1,14 @@
+3 terminales:
+
+cd server:
+npm run dev
+
+cd server:
+npm run build  --> esta es solo por si hacen cambios tranpirar el ts a js
+
+cd Examen:
+ng serve --o
+
+
+en el archivo Keys. Vienen las credenciales para crear la base de datos
+

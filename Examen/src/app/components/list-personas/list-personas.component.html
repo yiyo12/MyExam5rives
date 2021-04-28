@@ -1,0 +1,36 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <!--th scope="col">ID</!--th-->
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido Paterno</th>
+      <th>Estado</th>
+      <th>Ciudad</th>
+      <th>Calle</th>
+      <th>No Exterior</th>
+      <th scope="col" class="task">Borrar</th>
+      <th scope="col" class="task">Actualizar</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of arrayPeople | searchByName: filterName">
+      <!--td>{{persona.idCliente}}</td-->
+      <td>{{persona.nombres}}</td>
+      <td>{{persona.apellidoP}}</td>
+      <td>{{persona.estado}}</td>
+      <td>{{persona.ciudad}}</td>
+      <td>{{persona.calle}}</td>
+      <td>{{persona.numExt}}</td>
+
+      <td class="task"> <button class="btn btn-danger" (click)="onDelete(persona.idCliente)"><i
+            class="fas fa-trash-alt"></i></button>
+      </td>
+      <td class="task"> <button [routerLink]="['/Persona/editar', persona.idCliente]" class="btn btn-success"><i
+            class="fas fa-edit"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>

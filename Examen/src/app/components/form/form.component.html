@@ -1,0 +1,62 @@
+<div class="col-md-4-offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <label for="" class=""><strong>Add People</strong> </label>
+      <form [formGroup]="myForm" (ngSubmit)="edit ? editPeople() :saveData() " novalidate>
+        <span class="p-2">Nombres</span>
+        <div class="form-gruop p-2">
+          <input formControlName="nombres" type="text" name="Nombre" class="form-control" id="" autofocus maxlength="40">
+        </div>
+        <div *ngIf="myForm.get('nombres')?.errors && myForm.get('nombres')?.dirty">
+          <p *ngIf="myForm.get('nombres')?.hasError('required')" style="color: red;">Este campo es necesario</p>
+        </div>
+        <span class="p-2">Apellido</span>
+        <div class="form-gruop p-2">
+          <input formControlName="apellidoP" type="text" name="apellidoP" class="form-control" id="" autofocus maxlength="60">
+        </div>
+        <div *ngIf="myForm.get('apellidoP')?.errors && myForm.get('apellidoP')?.dirty">
+          <p *ngIf="myForm.get('apellidoP')?.hasError('required')" style="color: red;"> Este campo es necesario</p>
+        </div>
+
+        <span class="p-2">Estado</span>
+        <div class="form-gruop p-2">
+          <input formControlName="estado" type="text" name="estado" placeholder="Ejemplo: Sonora"
+            class="form-control" id="" autofocus maxlength="20">
+        </div>
+        <div *ngIf="myForm.get('estado')?.errors && myForm.get('estado')?.dirty">
+          <p *ngIf="myForm.get('estado')?.hasError('estado')" style="color: red;"> Este campo es necesario</p>
+        </div>
+
+        <span class="p-2">Ciudad</span>
+        <div class="form-gruop p-2">
+          <input formControlName="ciudad" type="text" name="ciudad" placeholder="Ejemplo: Obregón"
+            class="form-control" id="" autofocus maxlength="20">
+        </div>
+        <div *ngIf="myForm.get('ciudad')?.errors && myForm.get('ciudad')?.dirty">
+          <p *ngIf="myForm.get('ciudad')?.hasError('required')" style="color: red;"> Este campo es necesario</p>
+        </div>
+        <span class="p-2">Calle</span>
+        <div class="form-gruop p-2">
+          <input formControlName="calle" type="text" name="calle" placeholder="Ejemplo: Miguel Aleman"
+            class="form-control" id="" autofocus maxlength="40">
+        </div>
+        <div *ngIf="myForm.get('calle')?.errors && myForm.get('calle')?.dirty">
+          <p *ngIf="myForm.get('calle')?.hasError('required')" style="color: red;"> Este campo es necesario</p>
+        </div>
+
+        <span class="p-2">Numero</span>
+        <div class="form-gruop p-2">
+          <input formControlName="numExt" type="text" name="numExt" placeholder="Ejemplo: 345"
+            class="form-control" id="" autofocus maxlength="3">
+        </div>
+        <div *ngIf="myForm.get('numExt')?.errors && myForm.get('numExt')?.dirty">
+          <p *ngIf="myForm.get('numExt')?.hasError('required')" style="color: red;"> Este campo es necesario</p>
+        </div>
+        <div class="p-2 task" >
+          <button class="btn btn-success" type="submit" [disabled]="myForm.invalid">Agregar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
